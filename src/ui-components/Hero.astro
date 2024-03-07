@@ -1,0 +1,58 @@
+---
+interface Props {
+  topper?: string;
+  heading: string;
+  image?: {
+    src: string;
+    alt: string;
+    location: 'side' | 'full';
+  };
+  contentLocation: 'left' | 'right' | 'center';
+  classes?: string;
+}
+
+const {
+  topper,
+  heading,
+  image,
+  contentLocation = 'left',
+  classes,
+  ...rest
+} = Astro.props as Props;
+---
+
+<section
+  id="hero"
+  class:list={[
+    'hero',
+    classes,
+    'content-' + contentLocation,
+    image ? `image-${image.location}` : '',
+  ]}
+  {...rest}
+>
+  <div class="container">
+    <div class="content">
+      {topper && <span class="topper">{topper}</span>}
+      <h1 class="title">{heading}</h1>
+      <slot><p>Text goes here.</p></slot>
+    </div>
+    <!--To make your own background crops of people use https://www.remove.bg/-->
+    {
+      image && (
+        <picture class="picture">
+          <source media="(max-width: 600px)" srcset={image.src} />
+          <source media="(min-width: 601px)" srcset={image.src} />
+          <img
+            aria-hidden="true"
+            decoding="async"
+            src={image.src}
+            alt={image.alt}
+            width="886"
+            height="842"
+          />
+        </picture>
+      )
+    }
+  </div>
+</section>
