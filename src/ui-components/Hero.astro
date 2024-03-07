@@ -1,24 +1,28 @@
 ---
 interface Props {
+  contentLocation: 'left' | 'right' | 'center';
+  classes?: string;
   topper?: string;
-  heading: string;
+  heading?: string;
+  textColor?: 'dark' | 'light';
   image?: {
     src: string;
     alt: string;
-    location: 'side' | 'full';
+    location: 'side' | 'background';
   };
-  contentLocation: 'left' | 'right' | 'center';
-  classes?: string;
 }
 
 const {
-  topper,
+  classes,
+  contentLocation = 'left',
   heading,
   image,
-  contentLocation = 'left',
-  classes,
-  ...rest
+  textColor = 'dark',
+  topper,
+  ...attr
 } = Astro.props as Props;
+
+const bgImage = image?.src;
 ---
 
 <section
@@ -26,33 +30,43 @@ const {
   class:list={[
     'hero',
     classes,
+    textColor ? 'text-' + textColor : '',
     'content-' + contentLocation,
     image ? `image-${image.location}` : '',
   ]}
-  {...rest}
+  {...attr}
 >
-  <div class="container">
-    <div class="content">
-      {topper && <span class="topper">{topper}</span>}
-      <h1 class="title">{heading}</h1>
-      <slot><p>Text goes here.</p></slot>
-    </div>
-    <!--To make your own background crops of people use https://www.remove.bg/-->
-    {
-      image && (
-        <picture class="picture">
-          <source media="(max-width: 600px)" srcset={image.src} />
-          <source media="(min-width: 601px)" srcset={image.src} />
-          <img
-            aria-hidden="true"
-            decoding="async"
-            src={image.src}
-            alt={image.alt}
-            width="886"
-            height="842"
-          />
-        </picture>
-      )
-    }
+  <div class="content">
+    {topper && <span class="topper">{topper}</span>}
+    {heading && <h1 class="title">{heading}</h1>}
+    <slot><p>Text goes here.</p></slot>
   </div>
+  <!--To make your own background crops of people use https://www.remove.bg/-->
+  {
+    image && image.location != 'background' && (
+      <picture class="picture">
+        <source media="(max-width: 600px)" srcset={image.src} />
+        <source media="(min-width: 601px)" srcset={image.src} />
+        <img
+          aria-hidden="true"
+          decoding="async"
+          src={image.src}
+          alt={image.alt}
+          width="886"
+          height="842"
+        />
+      </picture>
+    )
+  }
 </section>
+
+<style define:vars={{ bg: 'url("' + image.src + '")' }}>
+  section {
+    background-image: var(--bg);
+  }
+  .text-light,
+  .text-light h1,
+  .text-light h2 {
+    color: white;
+  }
+</style>
