@@ -1,7 +1,13 @@
 ---
 // Import the global.css file here so that it is included on
 // all pages through the use of the <BaseHead /> component.
+
+// Built-in CSS styles.
+import '../styles/reset.css';
+import '../styles/utils.css';
 import '../styles/global.css';
+
+// Site information
 import { SITE_TITLE, SITE_DEFAULT_IMAGE } from '../consts';
 
 interface Props {
@@ -11,7 +17,6 @@ interface Props {
 }
 
 const canonicalURL = new URL(Astro.url.pathname, Astro.site);
-
 const { title, description } = Astro.props;
 ---
 
