@@ -1,7 +1,7 @@
 ---
-import BaseHead from '../components/BaseHead.astro';
-import Header from '../components/Header.astro';
-import Footer from '../components/Footer.astro';
+import BaseHead from '../components/site/BaseHead.astro';
+import Header from '../components/site/Header.astro';
+import Footer from '../components/site/Footer.astro';
 import { SITE_TITLE, SITE_DESCRIPTION } from '../consts';
 ---
 
@@ -10,7 +10,7 @@ import { SITE_TITLE, SITE_DESCRIPTION } from '../consts';
   <head>
     <BaseHead title={SITE_TITLE} description={SITE_DESCRIPTION} />
   </head>
-  <body>
+  <body class="dark:bg-slate-900 dark:text-white bg-white text-slate-900">
     <a href="#main-content" class="sr-only">Skip to content</a>
     <Header />
     <main id="#main-content">
