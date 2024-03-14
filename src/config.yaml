@@ -1,0 +1,40 @@
+# TODO: use this instead of consts.ts
+site:
+  title: 'NVD Astro Starterkit';
+  description: 'This is the default description of this website. Nice!';
+  url: 'https://example.com/';
+  UTM_SOURCE: slugify(SITE_TITLE);
+  DEFAULT_IMAGE: '/blog-placeholder-1.jpg';
+
+ui:
+  theme: 'system' # Values: "system" | "light" | "dark" | "light:only" | "dark:only"
+
+  analytics:
+  vendors:
+    googleAnalytics:
+      id: null # or "G-XXXXXXXXXX"
+
+# Default SEO metadata
+metadata:
+  title:
+    default: AstroWind
+    template: '%s — AstroWind'
+  description: "\U0001F680 Suitable for Startups, Small Business, Sass Websites, Professional Portfolios, Marketing Websites, Landing Pages & Blogs."
+  robots:
+    index: true
+    follow: true
+  openGraph:
+    site_name: AstroWind
+    images:
+      - url: '~/assets/images/default.png'
+        width: 1200
+        height: 628
+    type: website
+  twitter:
+    handle: '@onwidget'
+    site: '@onwidget'
+    cardType: summary_large_image
+
+i18n:
+  language: en
+  textDirection: ltr

@@ -11,3 +11,7 @@ export const SITE_DESCRIPTION = 'This is the default description of this website
 export const SITE_URL = 'https://example.com/';
 export const SITE_UTM_SOURCE = slugify(SITE_TITLE);
 export const SITE_DEFAULT_IMAGE = '/blog-placeholder-1.jpg';
+
+export const UI_THEME = 'system'; // Values: "system" | "light" | "dark" | "light:only" | "dark:only"
+
+export const ANALYTICS_GA4 = null;

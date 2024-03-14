@@ -1,6 +1,7 @@
 ---
-import NavLink from '../ui-components/NavLink.astro';
+import NavLink from '../components/ui/NavLink.astro';
 import { SITE_TITLE } from '../consts';
+import DarkModeToggle from '../components/ui/DarkModeToggle.astro';
 ---
 
 <header>
@@ -10,6 +11,7 @@ import { SITE_TITLE } from '../consts';
       <NavLink href="/" data-navLink>Home</NavLink>
       <NavLink href="/blog" data-navLink>Blog</NavLink>
       <NavLink href="/about" data-navLink>About</NavLink>
+      <DarkModeToggle />
     </div>
     <!-- <div class="social-links">
 			<a href="https://m.webtoo.ls/@astro" target="_blank">
@@ -47,8 +49,9 @@ import { SITE_TITLE } from '../consts';
   header {
     margin: 0;
     padding: 0 1em;
-    background: white;
+    background: rgb(var(--white));
     box-shadow: 0 2px 8px rgba(var(--black), 5%);
+    color: rgb(var(--black));
   }
   h2 {
     margin: 0;

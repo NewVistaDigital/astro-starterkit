@@ -21,8 +21,6 @@ const {
   topper,
   ...attr
 } = Astro.props as Props;
-
-const bgImage = image?.src;
 ---
 
 <section
@@ -60,7 +58,7 @@ const bgImage = image?.src;
   }
 </section>
 
-<style define:vars={{ bg: 'url("' + image.src + '")' }}>
+<style>
   section {
     background-image: var(--bg);
   }
