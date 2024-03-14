@@ -25,7 +25,7 @@ const setPreference = () => {
 
 const reflectPreference = () => {
   document.firstElementChild
-    .setAttribute('data-theme', theme.value)
+    .setAttribute('class', theme.value)
 
   document
     .querySelector('#theme-toggle')
@@ -56,3 +56,18 @@ window
     theme.value = isDark ? 'dark' : 'light'
     setPreference()
   })
+
+  
+  const initTheme = function () {
+    if ((defaultTheme && defaultTheme.endsWith(':only')) || (!localStorage.theme && defaultTheme !== 'system')) {
+      applyTheme(defaultTheme.replace(':only', ''));
+    } else if (
+      localStorage.theme === 'dark' ||
+      (!('theme' in localStorage) && window.matchMedia('(prefers-color-scheme: dark)').matches)
+    ) {
+      applyTheme('dark');
+    } else {
+      applyTheme('light');
+    }
+  };
+  initTheme();

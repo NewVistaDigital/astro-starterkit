@@ -20,3 +20,13 @@
     @apply btn border-none shadow-none text-muted hover:text-gray-900 dark:text-gray-400 dark:hover:text-white;
   }
 }
+
+@layer base {
+  h1 {
+    @apply text-4xl font-extrabold
+  }
+
+  h2 {
+    @apply text-2xl;
+  }
+}
