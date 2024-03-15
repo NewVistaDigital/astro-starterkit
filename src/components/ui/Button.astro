@@ -39,7 +39,7 @@ const {
 >
   {icon && icon.side === 'left' && <Icon name={icon.name} />}
 
-  <span>{text}</span>
+  <slot>{text}</slot>
 
   {icon && icon.side === 'right' && <Icon name={icon.name} />}
 </a>
