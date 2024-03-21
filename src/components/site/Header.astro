@@ -4,29 +4,48 @@ import NavLink from '../../components/ui/NavLink.astro';
 
 import { SITE_TITLE } from '../../consts';
 import DarkModeToggle from '../../components/ui/DarkModeToggle.astro';
-import { Astronav, MenuItems, MenuIcon,  Dropdown, DropdownItems } from "astro-navbar";
+import {
+  Astronav,
+  MenuItems,
+  MenuIcon,
+  Dropdown,
+  DropdownItems,
+} from 'astro-navbar';
 ---
-      <DarkModeToggle />
 
-<header class="lg:flex p-5  gap-5">
+<DarkModeToggle />
+
+<header class="gap-5 p-5 lg:flex">
   <Astronav>
-    <div class="flex w-full justify-between items-center">
-      <a class="font-extrabold text-xl">{SITE_TITLE}</a>
+    <div class="flex w-full items-center justify-between">
+      <a class="text-xl font-extrabold">{SITE_TITLE}</a>
       <div class="block lg:hidden">
-        <MenuIcon class="w-4 h-4 text-gray-800">
-					<svg class="ham hamRotate ham8" viewBox="0 0 100 100" width="40" onclick="this.classList.toggle('active')">
-  <path class="line top stroke-stone-800 dark:stroke-white" d="m 30,33 h 40 c 3.722839,0 7.5,3.126468 7.5,8.578427 0,5.451959 -2.727029,8.421573 -7.5,8.421573 h -20" />
-  <path class="line middle stroke-stone-800 dark:stroke-white" d="m 30,50 h 40" />
-  <path class="line bottom stroke-stone-800 dark:stroke-white" d="m 70,67 h -40 c 0,0 -7.5,-0.802118 -7.5,-8.365747 0,-7.563629 7.5,-8.634253 7.5,-8.634253 h 20" />
-</svg></MenuIcon>
+        <MenuIcon class="h-4 w-4 text-gray-800">
+          <svg
+            class="ham hamRotate ham8"
+            viewBox="0 0 100 100"
+            width="40"
+            onclick="this.classList.toggle('active')">
+            <path
+              class="line top stroke-stone-800 dark:stroke-white"
+              d="m 30,33 h 40 c 3.722839,0 7.5,3.126468 7.5,8.578427 0,5.451959 -2.727029,8.421573 -7.5,8.421573 h -20"
+            ></path>
+            <path
+              class="line middle stroke-stone-800 dark:stroke-white"
+              d="m 30,50 h 40"></path>
+            <path
+              class="line bottom stroke-stone-800 dark:stroke-white"
+              d="m 70,67 h -40 c 0,0 -7.5,-0.802118 -7.5,-8.365747 0,-7.563629 7.5,-8.634253 7.5,-8.634253 h 20"
+            ></path>
+          </svg></MenuIcon
+        >
       </div>
     </div>
     <MenuItems class="hidden lg:flex">
       <ul class="flex flex-col lg:flex-row lg:gap-5">
-
-      <li><NavLink href="/" data-navLink>Home</NavLink></li>
-      <li><NavLink href="/blog" data-navLink>Blog</NavLink></li>
-      <li><NavLink href="/about" data-navLink>About</NavLink></li>
+        <li><NavLink href="/" data-navLink>Home</NavLink></li>
+        <li><NavLink href="/blog" data-navLink>Blog</NavLink></li>
+        <li><NavLink href="/about" data-navLink>About</NavLink></li>
         <li>
           <Dropdown class="group">
             <button class="flex items-center">
@@ -37,7 +56,7 @@ import { Astronav, MenuItems, MenuIcon,  Dropdown, DropdownItems } from "astro-n
                 viewBox="0 0 24 24"
                 stroke-width="3"
                 stroke="currentColor"
-                class="w-3 h-3 mt-0.5 group-open:rotate-180">
+                class="mt-0.5 h-3 w-3 group-open:rotate-180">
                 <path
                   stroke-linecap="round"
                   stroke-linejoin="round"
@@ -56,7 +75,7 @@ import { Astronav, MenuItems, MenuIcon,  Dropdown, DropdownItems } from "astro-n
           </Dropdown>
         </li>
 
-      <li><NavLink href="/contact" data-navLink>Contact</NavLink></li>
+        <li><NavLink href="/contact" data-navLink>Contact</NavLink></li>
       </ul>
     </MenuItems>
   </Astronav>
@@ -73,46 +92,50 @@ import { Astronav, MenuItems, MenuIcon,  Dropdown, DropdownItems } from "astro-n
   });
 </script>
 
-
 <style>
-.ham {
-  cursor: pointer;
-  transition: transform 400ms;
-  user-select: none;
-}
-.hamRotate.active {
-  transform: rotate(45deg);
-}
-.hamRotate180.active {
-  transform: rotate(180deg);
-}
-.line {
-  fill:none;
-  transition: stroke-dasharray 400ms, stroke-dashoffset 400ms;
-  stroke-width:5.5;
-  stroke-linecap:round;
-}
+  .ham {
+    cursor: pointer;
+    transition: transform 400ms;
+    user-select: none;
+  }
+  .hamRotate.active {
+    transform: rotate(45deg);
+  }
+  .hamRotate180.active {
+    transform: rotate(180deg);
+  }
+  .line {
+    fill: none;
+    transition:
+      stroke-dasharray 400ms,
+      stroke-dashoffset 400ms;
+    stroke-width: 5.5;
+    stroke-linecap: round;
+  }
 
-.ham8 .top {
-  stroke-dasharray: 40 160;
-}
-.ham8 .middle {
-  stroke-dasharray: 40 142;
-  transform-origin: 50%;
-  transition: transform 400ms;
-}
-.ham8 .bottom {
-  stroke-dasharray: 40 85;
-  transform-origin: 50%;
-  transition: transform 400ms, stroke-dashoffset 400ms;
-}
-.ham8.active .top {
-  stroke-dashoffset: -64px;
-}
-.ham8.active .middle {
-  //stroke-dashoffset: -20px;
-  transform: rotate(90deg);
-}
-.ham8.active .bottom {
-  stroke-dashoffset: -64px;
-}</style>
+  .ham8 .top {
+    stroke-dasharray: 40 160;
+  }
+  .ham8 .middle {
+    stroke-dasharray: 40 142;
+    transform-origin: 50%;
+    transition: transform 400ms;
+  }
+  .ham8 .bottom {
+    stroke-dasharray: 40 85;
+    transform-origin: 50%;
+    transition:
+      transform 400ms,
+      stroke-dashoffset 400ms;
+  }
+  .ham8.active .top {
+    stroke-dashoffset: -64px;
+  }
+  .ham8.active .middle {
+    //stroke-dashoffset: -20px;
+    transform: rotate(90deg);
+  }
+  .ham8.active .bottom {
+    stroke-dashoffset: -64px;
+  }
+</style>
