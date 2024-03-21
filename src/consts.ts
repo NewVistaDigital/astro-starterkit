@@ -17,4 +17,6 @@ export const SITE_UTM_SOURCE = slugify(SITE_TITLE);
 
 export const UI_THEME = 'system'; // Values: "system" | "light" | "dark" | "light:only" | "dark:only"
 
+export const DISABLE_INDEXING = true;
+
 export const ANALYTICS_GA4 = null;

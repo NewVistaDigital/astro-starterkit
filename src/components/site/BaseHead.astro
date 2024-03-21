@@ -6,7 +6,7 @@
 import '../../assets/tailwind.css';
 
 // Site information
-import { SITE_TITLE, SITE_DEFAULT_IMAGE } from '../../consts';
+import { SITE_TITLE, SITE_DEFAULT_IMAGE, DISABLE_INDEXING } from '../../consts';
 
 interface Props {
   title: string;
@@ -23,6 +23,12 @@ const { title, description } = Astro.props;
 <meta name="viewport" content="width=device-width,initial-scale=1" />
 <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
 <!-- <meta name="generator" content={Astro.generator} /> -->
+
+<!-- The next line enables or disables the indexing by robots on the page level -->
+<meta
+  name="robots"
+  content={DISABLE_INDEXING ? 'noindex, nofollow' : 'index, follow'}
+/>
 
 <!-- Font preloads -->
 <!-- <link rel="preload" href="/fonts/atkinson-regular.woff" as="font" type="font/woff" crossorigin />
