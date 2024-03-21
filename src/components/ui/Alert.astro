@@ -6,10 +6,13 @@ import { SITE_PHONE, SITE_PHONE_HREF } from 'src/consts';
 
 <div class="container mx-auto px-5 py-3">
   <div class="flex border-b border-b-stone-300 pb-3">
-    <span class="text-stone-700 max-sm:hidden">Give us a call:</span><span class="text-stone-700 max-sm:inline hidden">Tap to call:</span>
+    <span class="text-stone-700 max-sm:hidden">Give us a call:</span><span
+      class="hidden text-stone-700 max-sm:inline">Tap to call:</span
+    >
     <a
       href={SITE_PHONE_HREF}
-      class="mr-auto px-2 text-stone-950 font-bold dark:text-stone-300 hover:text-amber-700">{SITE_PHONE}</a
+      class="mr-auto px-2 font-bold text-stone-950 hover:text-amber-700 dark:text-stone-300"
+      >{SITE_PHONE}</a
     >
     <DarkModeToggle />
   </div>

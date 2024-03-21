@@ -1,18 +1,9 @@
 ---
-import Hero from '../components/ui/Hero.astro';
 import BaseLayout from '../layouts/BaseLayout.astro';
 ---
 
 <BaseLayout>
-  <Hero
-    contentLocation="left"
-    textColor="light"
-    image={{
-      src: '/new-vista-digital-starterkit.jpg',
-      alt: 'picture',
-      location: 'background',
-    }}
-  >
+  <div class="prose prose-teal dark:prose-invert mx-auto">
     <h1>Heading two</h1>
     <p>
       Welcome to the official <a href="https://astro.build/">Astro</a> blog starter
@@ -57,5 +48,5 @@ import BaseLayout from '../layouts/BaseLayout.astro';
         >astro-blog-template
       </a> by <a href="https://twitter.com/Charca">Maxi Ferreira</a>.
     </p>
-  </Hero>
+  </div>
 </BaseLayout>

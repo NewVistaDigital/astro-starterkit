@@ -10,6 +10,6 @@ import tailwind from "@astrojs/tailwind";
 export default defineConfig({
   site: "https://example.com",
   integrations: [mdx(), sitemap(), icon(), tailwind(), robotsTxt()],
-  output: "static",
+  output: "hybrid",
   adapter: netlify(),
 });
