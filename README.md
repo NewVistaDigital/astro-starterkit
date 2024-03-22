@@ -1,12 +1,9 @@
-# Astro Starter Kit: Blog
+# Astro Starter Kit for New Vista Digital
 
-```sh
-npm create astro@latest -- --template blog
-```
-
-![blog](/public/new-vista-digital-starterkit.jpg)
+![v1.0.2](https://img.shields.io/badge/base_version-1.0.2-blue) [![Netlify Status](https://api.netlify.com/api/v1/badges/88c112d8-d37d-4ab5-ad7e-30cb2a8b3d95/deploy-status)](https://app.netlify.com/sites/nvd-starterkit/deploys)
 
 ## New Installation
+
 To use the `Button.astro` component you ned to run
 
 ```sh
@@ -22,10 +19,16 @@ Inside of your Astro project, you'll see the following folders and files:
 ```text
 ├── public/
 ├── src/
-│   ├── components/
-│   ├── content/
-│   ├── layouts/
-│   └── pages/
+│  ├── components/
+│  │   ├── content/     Things like CTA, Galleries, etc.
+│  │   ├── site/        Head, Footer, Header, etc.
+│  │   ├── ui/          Buttons, Forms, Links, Alert, etc.
+│  ├── content/         If a blog is used, it goes here.
+│  ├── js/              Any js script components.
+│  ├── layouts/         Typically BaseLayout will do.
+│  ├── pages/
+│  ├── config.yml       Unused for now.
+│  └── consts.ts        All site variables set here.
 ├── astro.config.mjs
 ├── README.md
 ├── package.json
@@ -52,6 +55,21 @@ All commands are run from the root of the project, from a terminal:
 | `npm run preview`         | Preview your build locally, before deploying     |
 | `npm run astro ...`       | Run CLI commands like `astro add`, `astro check` |
 | `npm run astro -- --help` | Get help using the Astro CLI                     |
+
+## Packages used
+
+\* Indicates official integration maintained by astro
+
+- [astro-icon](https://github.com/natemoo-re/astro-icon)
+- [astro-navbar](https://github.com/surjithctly/astro-navbar)
+- [astro-robots-txt](https://github.com/alextim/astro-lib/tree/main/packages/astro-robots-txt#readme)
+- [astro-sitemap](https://docs.astro.build/en/guides/integrations-guide/sitemap/)\*
+- [netlify](https://docs.astro.build/en/guides/integrations-guide/netlify/)\*
+- [prettier-plugin-astro](https://github.com/withastro/prettier-plugin-astro)
+- [prettier-plugin-tailwindcss](https://github.com/tailwindlabs/prettier-plugin-tailwindcss)
+- [tailwind](https://docs.astro.build/en/guides/integrations-guide/tailwind/)\*
+- [tailwindcss-typography](https://github.com/tailwindlabs/tailwindcss-typography)
+- [Icon libraries](https://iconify.design/) - Try to pick one per project
 
 ## 👀 Want to learn more?
 
