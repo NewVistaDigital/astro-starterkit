@@ -1,16 +1,16 @@
 ---
 // Components
-import NavLink from '../../components/ui/NavLink.astro';
+import NavLink from "@components/ui/NavLink.astro";
 
-import { SITE_TITLE } from '../../consts';
-import DarkModeToggle from '../../components/ui/DarkModeToggle.astro';
+import { SITE_TITLE } from "@src/consts";
+import DarkModeToggle from "@components/ui/DarkModeToggle.astro";
 import {
   Astronav,
   MenuItems,
   MenuIcon,
   Dropdown,
   DropdownItems,
-} from 'astro-navbar';
+} from "astro-navbar";
 ---
 
 <DarkModeToggle />
@@ -83,11 +83,11 @@ import {
 
 <script>
   // Accessibility tool: add aria-current to current page nav links.
-  const navLinks = document.querySelectorAll('[data-navLink]');
+  const navLinks = document.querySelectorAll("[data-navLink]");
 
   navLinks.forEach((link) => {
-    if (link.getAttribute('href') === window.location.pathname) {
-      link.setAttribute('aria-current', 'page');
+    if (link.getAttribute("href") === window.location.pathname) {
+      link.setAttribute("aria-current", "page");
     }
   });
 </script>
