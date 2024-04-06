@@ -1,16 +1,16 @@
 # Astro Starter Kit for New Vista Digital
 
-![v1.0.2](https://img.shields.io/badge/base_version-1.0.2-blue) [![Netlify Status](https://api.netlify.com/api/v1/badges/88c112d8-d37d-4ab5-ad7e-30cb2a8b3d95/deploy-status)](https://app.netlify.com/sites/nvd-starterkit/deploys)
+[![Netlify Status](https://api.netlify.com/api/v1/badges/8a58c02e-2733-4c2d-9ac7-4049f486f600/deploy-status)](https://app.netlify.com/sites/avalanche-hardwood-floors/deploys)
+[![NVD Status](https://img.shields.io/badge/NVD_Starterkit-1.0.0_beta-blue)](https://github.com/NewVistaDigital/astro-starterkit)
 
+![Starterkit Image](public/new-vista-digital-starterkit.jpg)
+
+This starterkit is set up to use Tailwindcss and Astro to build quick and performant custom static sites.
 ## New Installation
 
-To use the `Button.astro` component you ned to run
-
-```sh
-npx add astro-icon
-```
-
 Update `consts.ts` with relevant site information.
+
+TODO: use the yaml file for this. Seems like it would be nicer.
 
 ## 🚀 Project Structure
 
@@ -73,8 +73,5 @@ All commands are run from the root of the project, from a terminal:
 
 ## 👀 Want to learn more?
 
-Check out [our documentation](https://docs.astro.build) or jump into our [Discord server](https://astro.build/chat).
+Check out the [Astro documentation](https://docs.astro.build).
 
-## Credit
-
-This theme is based off of the lovely [Bear Blog](https://github.com/HermanMartinus/bearblog/).
