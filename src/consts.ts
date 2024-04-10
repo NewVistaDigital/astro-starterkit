@@ -4,7 +4,7 @@
 // N.B. THIS FILE IS IMPORTED IN BOTH SERVER- AND CLIENT-SIDE CODE.
 // THINK TWICE BEFORE ADDING STUFF AS IT WILL GET SHIPPED TO THE CLIENT.
 
-import { slugify } from './js/slugify';
+import { slugify } from './utils/slugify';
 
 export const SITE_TITLE = 'NVD Astro Starterkit';
 export const SITE_DESCRIPTION = 'This is the default description of this website. Nice!';
