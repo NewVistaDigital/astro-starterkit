@@ -3,12 +3,15 @@ import BaseHead from "@components/site/BaseHead.astro";
 import Header from "@components/site/Header.astro";
 import Footer from "@components/site/Footer.astro";
 import { SITE_TITLE, SITE_DESCRIPTION } from "@src/consts";
+
+// const canonicalURL = new URL(Astro.url.pathname, Astro.site);
+const { title = SITE_TITLE, description = SITE_DESCRIPTION } = Astro.props;
 ---
 
 <!doctype html>
 <html lang="en">
   <head>
-    <BaseHead title={SITE_TITLE} description={SITE_DESCRIPTION} />
+    <BaseHead title={title} description={description} />
   </head>
   <body
     class="bg-white p-4 text-slate-900 transition-colors dark:bg-slate-900 dark:text-white">
